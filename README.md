@@ -59,10 +59,16 @@ public class dbconnect {
 ## Running the Application
 
 1. **Clone the Repository**: Clone this repository to your local machine.
+
+2. **Database Setup**: Setup Database using PostgreSQL as outlined above.
    
-2. **Open the Project**: Open the project in IntelliJ IDEA.
+4. **Open the Project**: Open the project in IntelliJ IDEA.
+
+5. **JDBC Driver**: Download the pgJDBC driver from [here](https://jdbc.postgresql.org/download/). And import the .jar file in your project's external libraries.
+
+6. **Configure Database Connection**: Adjust the database connection settings in the dbconnect.java file (per your machine) as outlined above.
    
-3. **Run the Application**: Navigate to `src/Main.java`, right-click on the file, and select `Run 'Main.main()'` to start the application.
+7. **Run the Application**: Navigate to `src/Main.java`, right-click on the file, and select `Run 'Main.main()'` to start the application.
 
 ## Usage
 
