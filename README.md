@@ -64,7 +64,7 @@ public class dbconnect {
    
 4. **Open the Project**: Open the project in IntelliJ IDEA.
 
-5. **JDBC Driver**: Download the pgJDBC driver from [here](https://jdbc.postgresql.org/download/). And import the .jar file in your project's external libraries.
+5. **JDBC Driver**: Download the [pgJDBC driver](https://jdbc.postgresql.org/download/). Import the downloaded .jar file in your project's external libraries.
 
 6. **Configure Database Connection**: Adjust the database connection settings in the dbconnect.java file (per your machine) as outlined above.
    
@@ -86,4 +86,4 @@ For queries, please contact me at [abdullah.basit@codedistrict.com](mailto:abdul
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt) file for details.
