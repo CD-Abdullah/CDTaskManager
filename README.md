@@ -8,6 +8,11 @@ The Task Manager CLI is a command-line interface application designed to manage 
 - **Task Management**: Add, view, update, and delete tasks.
 - **Personalization**: Each user can only interact with their tasks.
 
+## ERD
+
+![ERD TaskManager](https://github.com/CD-Abdullah/CDTaskManager/assets/174435638/a0cd115f-42b1-4491-aed8-d9ab094032e8)
+
+
 ## Prerequisites
 
 - Java JDK 11 or higher
