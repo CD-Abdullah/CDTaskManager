@@ -54,9 +54,17 @@ public class ConsoleMenu {
                     System.out.print("\n");
                     break;
                 case 2:
-                    PerformOperations.Tadd(UID);
-                    System.out.print("\n");
-                    break;
+                    try{
+                        Tasks tasks = new Tasks();
+                        tasks=tasks.AddTasks(UID);
+                        PerformOperations.Tadd(tasks);
+                        System.out.print("\n");
+                        break;
+                    }
+                    catch(SQLException e){
+                        System.out.println("Error Occurred. Please inform Admin.");
+                    }
+
                 case 3:
                     PerformOperations.Tview(UID);
                     System.out.print("\n");

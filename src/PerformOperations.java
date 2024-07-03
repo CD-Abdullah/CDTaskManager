@@ -3,26 +3,35 @@ import java.sql.*;
 
 public class PerformOperations {
 
-    public static void Tadd(int UID) throws SQLException {
-        Connection con = dbconnect.open();
-        try {
-            PreparedStatement ps = con.prepareStatement("INSERT INTO \"Tasks\" (\"UID\", \"TTitle\", \"TDesc\") VALUES (?,?,?)");
-            System.out.print("Enter Title: ");
-            String title = GetInput.getString();
-            System.out.print("Enter Description: ");
-            String description = GetInput.getString();
+    static Connection con = null;
+    static PreparedStatement ps =null;
+    static ResultSet rs=null;
 
-            ps.setInt(1, UID);
-            ps.setString(2, title);
-            ps.setString(3, description);
+    public static void Tadd(Tasks tasks) throws SQLException {
+        try {
+            con = dbconnect.open();
+            ps = con.prepareStatement("INSERT INTO \"Tasks\" (\"UID\", \"TTitle\", \"TDesc\") VALUES (?,?,?)");
+            ps.setInt(1, tasks.UID);
+            ps.setString(2, tasks.TTitle);
+            ps.setString(3, tasks.TDesc);
             ps.executeUpdate();
-            System.out.println("~~~ Task Added Successfully! ~~~");
 
         } catch (SQLException e) {
             System.out.println("Error Occurred. Please inform Admin.");
             System.out.println("Error adding task: " + e.getMessage());
+            throw new SQLException(e);
         }
-        dbconnect.close(con);
+        finally{
+            try {
+                if (rs != null) rs.close();
+                if (ps != null) ps.close();
+                if (con != null)  dbconnect.close(con);
+            } catch (SQLException e) {
+                System.err.println("Error closing resources: " + e.getMessage());
+                throw new SQLException(e);
+            }
+        }
+
     }
     public static void Tview(int UID) throws SQLException {
         Connection con = dbconnect.open();
@@ -58,6 +67,7 @@ public class PerformOperations {
         } catch (SQLException e) {
             System.out.println("Error Occurred. Please inform Admin.");
             System.out.println("Error deleting task: " + e.getMessage());
+
         }
         dbconnect.close(con);
     }
